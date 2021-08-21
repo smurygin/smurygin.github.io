@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        :root {
+            --primary: #1a202c;
+            --secondary: #192824;
+            --background: #1a202c;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-image: radial-gradient(var(--secondary) 30%, var(--background) 30%);
+            background-size: 2px 3px;
+            font-family: "Archivo Black", sans-serif;
+            color: var(--primary);
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        a {
+            display: block;
+            margin: auto;
+            padding: 1rem 1.25rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: white;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+            z-index: 1;
+        }
+
+        a:after {
+            content: "";
+            display: block;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            right: 1.25rem;
+            left: 1.25rem;
+            background-color: #fff;
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+            transform-origin: bottom center;
+            z-index: -1;
+        }
+
+        a:hover {
+            color: #2d2d2d;
+        }
+
+        a:hover:after {
+            right: 0;
+            left: 0;
+            height: 100%;
+        }
+    </style>
+    <head>
+        <meta charset="utf-8" />
+        <title>smurygin</title>
+        <base href="/" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Archivo:700&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <h3>
+                <a href="https://smurygin.com" rel="me external noreferrer">smurygin</a>
+            </h3>
+        </div>
+    </body>
+</html>
