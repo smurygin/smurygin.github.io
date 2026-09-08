@@ -1,0 +1,39 @@
+<article
+  class="widget"
+  [attr.aria-label]="widget().label"
+>
+  <h3 class="widget-label">{{ widget().label }}</h3>
+  @if (widget().art) {
+    <app-widget-art-canvas [widget]="widget()" />
+  }
+  <div class="widget-data">
+    @if (widget().main) {
+      <p
+        [class.widget-number]="widget().numeric"
+        [class.widget-title]="!widget().numeric"
+      >
+        @if (widget().url; as url) {
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            [href]="url"
+            >{{ widget().main }}</a
+          >
+        } @else {
+          {{ widget().main }}
+        }
+      </p>
+    }
+    <p class="widget-note">{{ widget().secondary }}</p>
+    @if (widget().detail; as detail) {
+      <p class="widget-note">{{ detail }}</p>
+    }
+    @if (widget().caption; as caption) {
+      <p class="widget-note">{{ caption }}</p>
+    }
+    @if (widget().status; as status) {
+      <p class="widget-note">{{ status }}</p>
+    }
+    <ng-content />
+  </div>
+</article>

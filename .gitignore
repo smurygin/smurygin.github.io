@@ -1,0 +1,53 @@
+# Dependencies and package-manager cache
+node_modules/
+.pnpm-store/
+
+# Build output and temporary files
+/dist/
+/out-tsc/
+/.snapshot-build/
+/tmp/
+
+# Angular and Nx generated data
+/.angular/
+/.nx/
+
+# Test output and browser tooling
+/coverage/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/.playwright/
+
+# Local environment; keep the documented template
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Local editor and agent state
+/.agents/
+/.codex/
+/.codegraph/
+/.scratch/
+/.impeccable/
+/.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+/.claude/worktrees/
+/.claude/settings.local.json
+
+# Editor temporary files
+*.swp
+*.swo
+*~
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db

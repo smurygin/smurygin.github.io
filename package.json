@@ -1,0 +1,65 @@
+{
+  "name": "@smurygin/personal-site",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "nx serve website",
+    "build": "nx build website",
+    "test": "nx test website --watch=false && node --test tools/art/*.test.mjs",
+    "lint": "nx run-many -t lint --all",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "pnpm format:check && pnpm lint && pnpm test && pnpm build",
+    "e2e": "pnpm build && playwright test --config=e2e/playwright.config.mts",
+    "spotify:authorize": "node tools/spotify-authorize.mjs",
+    "snapshots": "tsc -p tsconfig.snapshots.json && node --env-file-if-exists=.env .snapshot-build/snapshots/export-snapshots.js"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=24.15.0",
+    "pnpm": ">=11"
+  },
+  "dependencies": {
+    "@angular/common": "~22.1.0",
+    "@angular/compiler": "~22.1.0",
+    "@angular/core": "~22.1.0",
+    "@angular/platform-browser": "~22.1.0",
+    "@angular/platform-server": "~22.1.0",
+    "@angular/router": "~22.1.0",
+    "@angular/ssr": "~22.1.0",
+    "@ngx-translate/core": "^18.0.0",
+    "rxjs": "~7.8.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/core": "~22.1.0",
+    "@angular-devkit/schematics": "~22.1.0",
+    "@angular/build": "~22.1.0",
+    "@angular/cli": "~22.1.0",
+    "@angular/compiler-cli": "~22.1.0",
+    "@angular/language-service": "~22.1.0",
+    "@eslint/js": "^10.0.1",
+    "@nx/angular": "23.2.0",
+    "@nx/devkit": "23.2.0",
+    "@nx/eslint": "23.2.0",
+    "@nx/eslint-plugin": "23.2.0",
+    "@nx/playwright": "23.2.0",
+    "@nx/workspace": "23.2.0",
+    "@playwright/test": "^1.37.0",
+    "@schematics/angular": "~22.1.0",
+    "@types/node": "^22.0.0",
+    "angular-eslint": "^22.5.0",
+    "eslint": "^10.10.0",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-plugin-playwright": "^2.11.0",
+    "happy-dom": "^20.14.0",
+    "nx": "23.2.0",
+    "prettier": "~3.9.6",
+    "tslib": "^2.3.0",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.70.0",
+    "vitest": "^4.1.11"
+  },
+  "nx": {
+    "includedScripts": []
+  }
+}

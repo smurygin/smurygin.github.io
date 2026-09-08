@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# Indexing is intentionally disabled until the profile and canonical URL are configured.

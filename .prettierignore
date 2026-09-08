@@ -1,0 +1,35 @@
+# Dependencies, generated output and caches
+node_modules/
+.pnpm-store/
+/dist/
+/out-tsc/
+/.snapshot-build/
+/tmp/
+/.angular/
+/.nx/
+/coverage/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/.playwright/
+*.log
+
+# Local environment (the example remains checked)
+.env
+.env.*
+!.env.example
+
+# Canvas rendering modules
+/public/art/
+
+# Tool-managed metadata and local editor state
+/.agents/
+/.codegraph/
+/.scratch/
+/.codex/
+/.impeccable/
+/.claude/
+/.idea/
+/.vscode/
+pnpm-lock.yaml

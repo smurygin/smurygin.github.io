@@ -1,0 +1,100 @@
+<app-background-canvas />
+<div class="site-shell">
+  <a
+    class="skip-link"
+    href="#about"
+    >{{ 'skipLink' | translate }}</a
+  >
+  <header
+    class="masthead"
+    data-foreground
+  >
+    <app-signature [profile]="profile" />
+    <div class="masthead-actions">
+      <button
+        type="button"
+        class="theme-toggle"
+        aria-describedby="theme-mode"
+        [attr.aria-label]="'themeLabel' | translate"
+        [title]="'themeHint' | translate"
+        (click)="theme.cycle()"
+      >
+        <span
+          id="theme-mode"
+          aria-live="polite"
+        >
+          @switch (theme.preference()) {
+            @case ('system') {
+              {{ 'themeSystem' | translate }}
+            }
+            @case ('light') {
+              {{ 'themeLight' | translate }}
+            }
+            @case ('dark') {
+              {{ 'themeDark' | translate }}
+            }
+          }
+        </span>
+      </button>
+      <button
+        type="button"
+        class="icon-button motion-toggle"
+        [attr.aria-label]="
+          motion.paused()
+            ? ('resumeMotion' | translate)
+            : ('pauseMotion' | translate)
+        "
+        [attr.aria-pressed]="motion.paused()"
+        (click)="motion.toggle()"
+      >
+        <svg
+          viewBox="0 0 16 16"
+          aria-hidden="true"
+        >
+          @if (motion.paused()) {
+            <path
+              d="M4 2h2v2h3v2h3v4H9v2H6v2H4z"
+              fill="currentColor"
+              stroke="none"
+            />
+          } @else {
+            <path
+              d="M4 3h2v10H4zM10 3h2v10h-2z"
+              fill="currentColor"
+              stroke="none"
+            />
+          }
+        </svg>
+      </button>
+    </div>
+  </header>
+  <main
+    id="about"
+    tabindex="-1"
+  >
+    <app-profile [profile]="profile" />
+  </main>
+  <footer
+    class="lab-launcher"
+    data-foreground
+  >
+    <button
+      type="button"
+      class="pixel-button lab-toggle"
+      aria-controls="lab"
+      [attr.aria-expanded]="labOpen()"
+      (click)="openLab()"
+    >
+      <svg
+        viewBox="0 0 16 16"
+        aria-hidden="true"
+      >
+        <path d="M2 9h3V6h2V4h2v2h2v3h3v2h-3V9H9V7H7v2H5v2H2z" /></svg
+      ><span>{{ 'openLab' | translate }}</span>
+    </button>
+  </footer>
+</div>
+<app-lab-panel
+  [open]="labOpen()"
+  (closeRequested)="closeLab()"
+/>

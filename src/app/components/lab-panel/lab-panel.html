@@ -1,0 +1,44 @@
+<dialog
+  #dialog
+  id="lab"
+  class="lab-panel"
+  tabindex="-1"
+  aria-labelledby="lab-title"
+  (cancel)="cancel($event)"
+  (keydown.escape)="cancel($event)"
+  (click)="backdropClick($event)"
+  (close)="closeRequested.emit()"
+>
+  <div class="lab-inner">
+    <header class="lab-header">
+      <h2 id="lab-title">{{ 'labTitle' | translate }}</h2>
+      <button
+        type="button"
+        class="icon-button lab-close"
+        [attr.aria-label]="'closeLab' | translate"
+        (click)="closeRequested.emit()"
+      >
+        <svg
+          viewBox="0 0 16 16"
+          aria-hidden="true"
+        >
+          <path
+            d="M3 3h3v3h4V3h3v3h-3v4h3v3h-3v-3H6v3H3v-3h3V6H3z"
+            fill="currentColor"
+            stroke="none"
+          />
+        </svg>
+      </button>
+    </header>
+    @if (rendered()) {
+      <section
+        class="widgets"
+        [attr.aria-label]="'personalWidgets' | translate"
+      >
+        @for (plugin of registry.plugins; track plugin.id) {
+          <ng-container *ngComponentOutlet="plugin.component" />
+        }
+      </section>
+    }
+  </div>
+</dialog>

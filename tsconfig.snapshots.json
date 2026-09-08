@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": ".snapshot-build",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "types": ["node"],
+    "sourceMap": false
+  },
+  "include": ["src/snapshots/**/*.ts"],
+  "exclude": ["src/**/*.spec.ts"]
+}

@@ -1,0 +1,65 @@
+<article
+  class="profile-block"
+  data-foreground
+>
+  <h1>{{ 'greeting' | translate }}</h1>
+  <p class="profile-bio">{{ 'profileBio' | translate }}</p>
+  @if (role() || company()) {
+    <div
+      class="pixel-rule"
+      aria-hidden="true"
+    ></div>
+    <p class="work-copy">
+      {{ 'currently' | translate }}<br />
+      @if (role()) {
+        <span>{{ role() }}</span>
+      }
+      @if (company()) {
+        @if (role()) {
+          {{ 'at' | translate }}
+        }
+        @if (webUrl(profile().workplace.url); as url) {
+          <a
+            class="inline-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            [href]="url"
+            >{{ company() }}</a
+          >
+        } @else {
+          <span class="inline-underline">{{ company() }}</span>
+        }
+      }
+    </p>
+  }
+  @if (webUrl(profile().github) || webUrl(profile().telegram) || emailUrl()) {
+    <div
+      class="pixel-rule"
+      aria-hidden="true"
+    ></div>
+    <nav
+      class="contact-links"
+      [attr.aria-label]="'contactsLabel' | translate"
+    >
+      @if (webUrl(profile().github); as github) {
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          [href]="github"
+          >{{ 'githubLabel' | translate }}</a
+        >
+      }
+      @if (webUrl(profile().telegram); as telegram) {
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          [href]="telegram"
+          >{{ 'telegramLabel' | translate }}</a
+        >
+      }
+      @if (emailUrl(); as email) {
+        <a [href]="email">{{ 'emailLabel' | translate }}</a>
+      }
+    </nav>
+  }
+</article>

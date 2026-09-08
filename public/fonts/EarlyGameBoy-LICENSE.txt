@@ -1,0 +1,13 @@
+Early GameBoy
+Copyright LDEJRuff 2012
+Author: LDEJRuff (listed as Jimmy Campbell on DaFont)
+
+Source: https://www.dafont.com/early-gameboy.font
+Author page: https://fontstruct.com/fontstructions/show/604282/early_gameboy
+License: Creative Commons Attribution-ShareAlike 3.0 Unported
+https://creativecommons.org/licenses/by-sa/3.0/
+Legal code: https://creativecommons.org/licenses/by-sa/3.0/legalcode
+
+The font file is distributed unmodified. Its embedded copyright, license,
+and embedding flags have been preserved. This license applies to the font;
+other project files retain their own licenses.
