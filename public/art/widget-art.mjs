@@ -242,7 +242,7 @@ export class WidgetArt {
     this.circle(x, y, 21, '#1c1c1c');
     for (let radius = 8; radius < 21; radius += 2) this.circle(x, y, radius, null, radius % 4 ? '#777' : '#aaa', .6);
     ctx.save();
-    ctx.translate(x, y); ctx.rotate(this.phase * .65);
+    ctx.translate(x, y); ctx.rotate(this.phase * 1.25);
     for (let i = 0; i < 2; i++) {
       ctx.beginPath();
       ctx.arc(0, 0, 18.5, i * Math.PI + .15, i * Math.PI + .58);
@@ -258,8 +258,8 @@ export class WidgetArt {
     }
     ctx.restore();
     this.circle(78, 8, 3, '#777', '#111', .8);
-    const armX = playing ? 78 : 84;
-    const headX = playing ? 66 : 84;
+    const armX = playing ? 73 : 84;
+    const headX = playing ? 57 : 84;
     this.line(78, 8, armX, 26, '#222', 1.8);
     this.line(armX, 26, headX, 35, '#222', 1.8);
     ctx.save();

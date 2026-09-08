@@ -121,7 +121,12 @@ export class CanvasArtService {
     this.background.set(
       module.mountBackground(canvas, {
         quietElement,
-        quietElements: ['.signature', '.masthead-actions'],
+        quietElements: [
+          '.work-copy',
+          '.contact-links',
+          '.signature',
+          '.masthead-actions',
+        ],
         paused: (): boolean => this.site.paused(),
       }),
     );

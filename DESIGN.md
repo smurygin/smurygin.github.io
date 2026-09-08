@@ -22,16 +22,28 @@ including paused scenes. Follow the system by default; the masthead theme contro
 cycles Auto → Light → Dark → Auto and remembers explicit choices. Apply the saved
 choice before the first paint.
 
-Use bundled Early GameBoy for interface text and numerals. Use sizes in 8px
-increments: 16px text, 24px measurements and 32px large headings. Keep the regular
-weight, avoid synthetic bold, and use tabular numerals for changing measurements
-and time. Keep a monospace grid for ASCII artwork. Keep the greeting dominant, biography comfortable to read and
-widget labels compact. Preserve the font license in `public/fonts/`.
+Use self-hosted Geist Mono for body copy, controls, widget titles and metadata.
+Use Geist Pixel Square only for the greeting, signature, lab heading and large
+numeric values. Keep Pixel at its real 400 weight; Mono uses 400 for prose,
+500 for actions and workplace emphasis, and 600 for widget titles and labels.
+
+Typography roles are defined in `src/styles.scss`: a responsive 48–72px greeting,
+28px lab heading, 28–32px numeric values, 17–18px biography and widget titles,
+16px controls, 14px supporting text and 12px labels/timestamps. Use rem-based
+sizes so browser font preferences and zoom remain effective. Biography measure
+is capped at 54ch with 1.75 line height. Separate context, primary information
+and update timestamps with spacing as well as size; never flatten all widget
+copy into one visual role. Keep tabular numerals and preserve the bundled OFL
+license in `public/fonts/`.
 
 ## Composition
 
-- Present the greeting, biography, workplace and contacts in one narrow column.
-- Place the signature, theme button and motion control in the masthead; anchor **Open lab** at
+- Present three separate groups in one narrow column: greeting with biography,
+  workplace, and contacts. Use open 64px gaps (48px on mobile), without dividing
+  lines. Give each group its own quiet background region so ink flows through
+  the spaces between them.
+- Place a prominent pixel D / S monogram with the full name as a small adjacent
+  caption, the theme button and motion control in the masthead; anchor **Open lab** at
   the bottom center.
 - Keep calm regions in the background around text and controls.
 - Open the lab as a bottom panel with a double top border and dimmed backdrop.
@@ -50,8 +62,11 @@ error states within its tile.
 
 Use pointer movement, touch and Enter/Space to trigger fading ripples in widget
 art. Steam uses the supplied icon with a deterministic graphic fallback. Time
-uses an hourglass; Spotify uses a stationary record to represent listening history,
-with the tonearm lifted for an empty history.
+uses an hourglass; Spotify uses a rotating record with its tonearm over the groove when listening
+history contains a track. This is decorative motion, not a live playback claim;
+the last-played timestamp remains visible. Empty history keeps the record still
+and the tonearm lifted. The global pause control and reduced-motion preference
+freeze rotation without changing the listening-history state.
 
 ## Motion
 

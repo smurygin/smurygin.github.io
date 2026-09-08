@@ -18,7 +18,7 @@ A personal site with an interactive lab and a canvas of moving ink.
 
 ## Features
 
-A single-page personal site with a four-tone green palette, bundled pixel
+A single-page personal site with a four-tone green palette, bundled Geist Mono and pixel
 typography and an interactive ink background. The introduction stays in focus;
 the lab opens when you want to explore.
 

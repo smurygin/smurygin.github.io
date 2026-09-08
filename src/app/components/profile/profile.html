@@ -1,18 +1,19 @@
-<article
-  class="profile-block"
-  data-foreground
->
-  <h1>{{ 'greeting' | translate }}</h1>
-  <p class="profile-bio">{{ 'profileBio' | translate }}</p>
+<article class="profile-block">
+  <div
+    class="profile-intro"
+    data-foreground
+  >
+    <h1>{{ 'greeting' | translate }}</h1>
+    <p class="profile-bio">{{ 'profileBio' | translate }}</p>
+  </div>
   @if (role() || company()) {
-    <div
-      class="pixel-rule"
-      aria-hidden="true"
-    ></div>
-    <p class="work-copy">
-      {{ 'currently' | translate }}<br />
+    <p
+      class="work-copy"
+      data-foreground
+    >
+      <span class="work-context">{{ 'currently' | translate }}</span>
       @if (role()) {
-        <span>{{ role() }}</span>
+        <span class="work-role">{{ role() }}</span>
       }
       @if (company()) {
         @if (role()) {
@@ -33,12 +34,9 @@
     </p>
   }
   @if (webUrl(profile().github) || webUrl(profile().telegram) || emailUrl()) {
-    <div
-      class="pixel-rule"
-      aria-hidden="true"
-    ></div>
     <nav
       class="contact-links"
+      data-foreground
       [attr.aria-label]="'contactsLabel' | translate"
     >
       @if (webUrl(profile().github); as github) {

@@ -57,7 +57,7 @@ export class SpotifyPlugin {
             : this.i18n.instant('lastPlayedAt', {
                 time: formatTimestamp(data.playedAt),
               }),
-        playing: false,
+        playing: true,
         detail:
           data.album === undefined
             ? this.t('albumUnavailable')

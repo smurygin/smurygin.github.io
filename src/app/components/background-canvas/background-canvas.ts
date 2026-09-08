@@ -27,7 +27,7 @@ export class BackgroundCanvas {
   public constructor() {
     afterNextRender((): void => {
       const quietElement: HTMLElement | null =
-        this.document.querySelector<HTMLElement>('.profile-block');
+        this.document.querySelector<HTMLElement>('.profile-intro');
       if (quietElement) {
         void this.art.mountBackground(
           this.canvas().nativeElement,

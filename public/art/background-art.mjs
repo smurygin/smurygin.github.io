@@ -165,7 +165,7 @@ class BackgroundArt {
     if (!this.cols || !this.rows) return;
     this.quietMask = new Float32Array(this.cols * this.rows);
     const quiet = this.quiet;
-    const feather = Math.min(110, Math.max(54, this.width * .08));
+    const feather = 32;
     const strengthAt = (rect, px, py, radius) => {
       const dx = Math.max(rect.left - 6 - px, 0, px - rect.right - 6);
       const dy = Math.max(rect.top - 6 - py, 0, py - rect.bottom - 6);

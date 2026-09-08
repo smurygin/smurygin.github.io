@@ -237,7 +237,7 @@ test('shows empty history with record graphics, then loads a last played snapsho
   await expect(spotify.getByText('Album: New album')).toBeVisible();
   await expect(spotify.locator('canvas')).toHaveAttribute(
     'data-playback',
-    'idle',
+    'playing',
   );
   await expect(spotify.getByRole('img', { name: /No tracks yet/ })).toHaveCount(
     0,

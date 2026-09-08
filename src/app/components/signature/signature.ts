@@ -16,23 +16,33 @@ import type { ProfileContent } from '../../declarations/interfaces/profile-conte
     role="img"
     [attr.aria-label]="label()"
   >
-    <span aria-hidden="true">{{ profile().first }}</span>
-    <svg
-      class="signature-cut"
-      viewBox="0 0 10 24"
-      aria-hidden="true"
-    >
-      <path
-        fill="currentColor"
-        d="M7 0H10L3 24H0L3 14H6L7 10H4Z"
-      />
-    </svg>
     <span
-      class="surname"
+      class="signature-monogram"
       aria-hidden="true"
-      [attr.data-text]="profile().last"
-      >{{ profile().last }}</span
     >
+      <span>{{ profile().first.slice(0, 1) }}</span>
+      <svg
+        class="signature-cut"
+        viewBox="0 0 10 24"
+      >
+        <path
+          fill="currentColor"
+          d="M7 0H10L3 24H0L3 14H6L7 10H4Z"
+        />
+      </svg>
+      <span
+        class="surname"
+        [attr.data-text]="profile().last.slice(0, 1)"
+      >
+        {{ profile().last.slice(0, 1) }}
+      </span>
+    </span>
+    <span
+      class="signature-name"
+      aria-hidden="true"
+    >
+      {{ profile().first }}<br />{{ profile().last }}
+    </span>
   </div>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
